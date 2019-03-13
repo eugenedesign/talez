@@ -1,0 +1,596 @@
+@charset "utf-8";
+
+*{
+	box-sizing: border-box;
+	font-family: 'Vollkorn', serif;
+	font-size: 18px;
+	margin:0;
+	padding:0;
+	color:#31374d;	
+	-webkit-font-smoothing: antialiased;
+}
+
+body {
+	background: #f5f5f5;
+	-ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+a {
+	text-decoration: none;
+	outline: none;
+}
+
+a:hover {text-decoration:underline;}
+
+.menu a {
+	display:block;
+	text-decoration: none;
+	height: 46px;
+}
+
+.menu a:hover{ border-bottom:2px solid #a47e57; }
+
+.button {
+	display:block;
+	position: relative;
+	margin:auto;
+	margin-top:45px;
+	width: 200px;
+	height: 50px;
+	padding:12px 30px;
+	font-family: 'Philosopher', sans-serif;
+	font-weight:700;
+	font-size: 20px;
+	text-align: center;
+	border:1px solid #31374d;
+}
+
+.button:after {
+	position: absolute;
+	left:-5px;
+	top:3px;
+	content:"";
+	display:block;
+	margin:auto;
+	width: 136px;
+	height: 0px;
+	padding:20px 35px;
+	border:1px solid #31374d;
+}
+
+.button:hover, 
+.button:hover:after {
+	text-decoration: none;
+	color:#a47e57;
+	border:1px solid #a47e57;
+}
+
+.top {
+	display: block;
+	min-height: 100px;
+	padding-bottom: 100px;
+	border-bottom: 1px solid #dddddd;
+}
+
+
+#menuToggle { 
+width:24px;
+height:24px;
+display: block;
+  position: relative;
+  top: 5px;
+  left: 0px;
+  z-index: 6;
+  -webkit-user-select: none;
+  user-select: none;
+
+}
+
+#menuToggle input
+{
+  display: block;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top:0;
+  left:0;
+  cursor: pointer;
+  opacity: 0; /* hide this */
+  z-index: 1000; /* and place it over the hamburger */
+  
+  -webkit-touch-callout: none;
+}
+
+
+#menuToggle span {
+
+display: block;
+  width: 24px;
+  height: 3px;
+  margin-bottom: 5px;
+  position: relative;
+  
+  background: #474953;
+  border-radius: 3px;
+  
+  z-index: 3;
+  
+  transform-origin: 4px 0px;
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+/* 
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+#menuToggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(1px, 3px);
+  background: #474953;
+}
+
+/*
+ * But let's hide the middle one.
+ */
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+ * Ohyeah and the last one should go the other direction
+ */
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, 0px);
+}
+
+/*
+ * Make this absolute positioned
+ * at the top left of the screen
+ */
+
+#menu
+{
+  position: fixed;
+  top:0;
+  left:0;
+  width: 100%;
+  height:100%;
+  margin: 0 0 0 0px;
+  
+
+  background:#f7f7f7;
+  
+  -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+	text-align: left;
+  z-index: 2;
+}
+
+
+#menu ul{
+	list-style-type: none;	
+	width: 220px;
+	min-height: 200px;
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+	font-size: 22px;
+}
+
+#menu li { padding: 10px 0; }
+
+#menu li a { 
+	font-size: 22px;
+	display: block;
+}
+
+#menu ul li:nth-of-type(5) > a
+{
+	margin-top:30px;
+	font-size:19px;
+	color:#a47e57;
+}
+
+#menuToggle input:checked ~ div
+{
+  transform: none;
+}
+
+
+.slider {
+	max-width: 1230px;
+	margin: 30px auto;
+}
+
+.slick-slide { margin: 0px 30px; }
+
+.slick-slide img { width: 100%; }
+
+.slick-prev:before, .slick-next:before { color: #474953; }
+
+.slick-slide { transition: all ease-in-out .3s; }
+    
+.slick-active { }
+
+.slick-current { }
+
+h1 {
+	font-family: 'Philosopher', sans-serif;
+	font-size: 62px;
+	max-width: 900px;
+	display: block;
+	text-align: center;
+	margin:auto;
+	margin-bottom: 80px;
+	margin-top: 130px;
+	line-height: 62px;	
+}
+
+h2 {
+	font-family: 'Philosopher', sans-serif;
+	margin:15px 15px;
+	font-size: 42px;
+	line-height: 44px;
+	margin-bottom: 5px;
+	display: block;
+}
+
+.name {
+	font-family: 'Philosopher', sans-serif;
+	margin-left:15px;
+	font-size: 22px;
+	display: block;
+	font-weight: 400;
+	color:#a47e57;
+	margin-top:0px;
+}
+
+.slide {
+	text-align: center;
+	display: block;
+	position: relative;
+	top:0;
+	margin-top: 15px;
+	transition: all .3s;
+}
+
+.avatar {
+	display: block;
+	width: 120px;
+	height:120px;
+	border-radius: 60px;
+	margin: auto;
+	overflow: hidden;
+}
+
+.slide:hover {
+	cursor:pointer;
+	top:-7px;
+}
+
+.slide:hover .avatar img {
+	width: 110%;
+	left:-5%;
+}
+
+.avatar img {
+	position: relative;
+	width: 100%;
+	height: auto;
+	left:0;
+	transition: all .3s;
+}
+
+
+.avatar-name {
+	display:block;
+	margin-top: 15px;
+	margin-bottom: 50px;
+}
+.text, .links {
+	margin:30px 15px 40px 15px;
+	line-height: 28px;
+}
+
+.links a {
+	font-size:22px;
+	display:block;
+	margin-bottom:15px;
+}
+
+.links a:hover {
+	text-decoration: underline;
+}
+
+.block {
+	border-bottom: 1px dotted #c5c5c5;
+	max-width: 768px;
+}
+
+.block a {
+	text-decoration: none;
+}
+
+.header {
+	max-width: 100%;
+	min-height: 62px;
+	padding:15px 15px;
+	margin: auto;
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	z-index:200;
+	display: block;
+	background: #f5f5f5;
+	border-bottom: 1px solid #dddddd;
+	transition: top 0.3s ease-in-out;
+}
+
+.wrapper{
+	margin: auto;
+	max-width: 1230px;
+	position: relative;
+}
+
+.wrapper div { position: absolute; }
+
+
+.hamburger-box { 
+	width: 25px; 
+	right: 0;
+	position:absolute;
+	display:none;
+}
+
+.logo, .bottom-logo {
+	font-family: 'Philosopher', sans-serif;
+	text-transform: uppercase;
+	z-index: 10;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	user-select: none;  
+}
+
+.logo {
+	color: #474953;
+	font-size: 34px;
+	font-weight: 700;
+	line-height: 14px;
+	width: 190px;
+	min-height: 20px;
+	float:left;
+	position: relative;
+	top:0px;
+}
+
+.bottom-logo {
+	display:block ;
+	margin-bottom: 15px;
+	font-size: 28px;
+	font-weight: 700;
+	color:#f5f5f5;
+
+}
+
+.wrapper a:hover {text-decoration: none;}
+
+.logo img {
+	width:60px;
+	margin-right:10px;
+}
+
+.navigation {
+	position:absolute;
+	right:0;
+}
+
+.menu, .bottom-menu-inner {
+	list-style:none;
+	margin-top: 1px;	
+}
+
+.menu {color: #474953;}
+
+.menu li, .bottom-menu-inner li {
+	font-family: 'Philosopher', sans-serif;
+	font-size: 16px;
+	display: inline-block;
+	margin-right:20px;
+	vertical-align: middle;	
+}
+
+.menu li:last-of-type, .bottom-menu-inner li:last-of-type {
+	margin-right:0px;
+	position: relative;
+	top:1px;
+}
+
+.bottom-menu, .bottom-menu-inner li, .bottom-menu a, .donate a, .copyright { 
+	color:#d2d2de;
+	margin-bottom: 15px;
+ }
+
+.wrap {
+	clear:both;
+	max-width: 1170px;
+	min-height: 200px;
+	display: flex;
+	flex-direction: row;
+	margin: auto;
+	margin-top:30px;
+}
+
+.content {
+	flex-basis: 800px;
+	max-width: 800px;
+	min-height: 200px;
+	margin:15px;
+}
+
+.right {
+	display: flex;
+	justify-content: center;
+	flex-basis: 311px;
+	max-width: 311px;
+	min-height: 200px;
+	padding-top: 30px;
+	margin:15px;
+}
+
+.banner {
+	width: 240px;
+	height:400px;
+	text-align: center;
+	padding: 15px;
+	border:1px solid #474953;
+	float: right;
+}
+
+.subtitle{
+	display:block;
+	margin-bottom: 30px;
+}
+
+.headline {
+	font-family: 'Philosopher', sans-serif;
+	font-size: 28px;
+	font-weight: 700;
+}
+
+.footer {
+	padding:30px 15px;
+	width:100%;
+	min-height:100px;
+	background:#474953;
+	margin-top:50px;
+}
+
+.nav-up {
+    top: -90px;
+}
+
+.fixed {
+	position:fixed;
+}
+
+.copyright {float: right;}
+
+.hidden-block { display: none;}
+
+@media (max-width: 1024px) {
+  /* Styles */
+}
+@media (max-width: 948px) {
+
+	h1 { margin:120px 30px 60px 30px;}
+	
+	.navigation {display: none;}
+	
+	.hamburger-box {display: block;}
+	
+	.right { display: none; }
+	
+	.content, .block { flex-basis: 100%; width: 100%; }
+}
+@media (max-width: 768px) {
+	
+	h1 {
+		font-size:44px;
+		line-height: 46px;
+		margin: 90px 15px 30px; 
+	}
+	
+	.top{padding-bottom: 40px;}
+	
+	h2, .name, .text, .links {
+		margin-left:5px;
+		margin-right:5px;
+	}
+	
+	h2 {font-size:32px;}
+	
+	.name{font-size:20px;}
+	.avatar-name {
+		margin-bottom: 30px;
+	}
+}
+
+@media (max-width: 640px) {
+	
+	h2, .name, .text {
+		margin-left:0;
+		margin-right:0;
+	}
+}
+@media (max-width: 480px) {
+	h1 {
+		font-size:36px;
+		line-height: 38px;
+		margin: 100px 15px 30px; 
+	}
+	.footer{padding-bottom:45px;}
+	.name { margin-top:0px; }
+	.bottom-logo { float:left; }
+	.bottom-menu-inner { display:none; }
+	.donate{ display:block; clear:both;margin-bottom: 15px; }
+	.copyright { display:block; float: left; }
+	
+}
+@media (max-width: 320px) {
+	h1 {
+		font-size:28px;
+		line-height: 30px;
+		margin: 90px 15px 20px; 
+	}
+	
+	.logo {
+		font-size:15.5px;
+		margin-top: -4px;
+		width: 60px;
+	}
+	
+	.logo img {
+		display: block;
+		width:50px;
+		margin-right:10px;
+		margin-bottom: 3px;
+	}
+	
+	h2 {
+		font-size:22px; 
+		line-height:24px; 
+	}
+	
+	.name { font-size:18px; }
+	
+	.text, .links {
+		font-size: 17px;
+		line-height: 25px;
+		
+	}
+	
+}

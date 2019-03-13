@@ -1,0 +1,73 @@
+@charset "utf-8";
+
+input{
+	opacity: 0;
+	position: relative;
+}
+.container {
+	margin:auto;
+	margin-top:15px;
+	width: 100%;
+	max-width: 1230px;
+    min-height: 100px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
+
+}
+label {
+	position: relative;
+	left:-7px;
+	display:inline-block;
+	padding:8px 15px;
+	border-radius:5px;
+	color:#454751;
+	text-transform: uppercase;
+	font-size: 11px;
+	font-weight: 700;
+	cursor: pointer;
+}
+
+
+
+
+input:checked + label { 
+
+	color:  #a47e57;
+	border:1px solid #a47e57;
+	cursor: default;
+}
+
+.grid:checked ~ .container > .item  {
+	display:flex;
+	max-width: 200px;
+	min-height: 90px;
+	flex-basis: 200px;
+	flex-grow:1;
+	flex-direction: column;
+	margin: 15px;
+	padding: 15px;
+	text-align: center;
+}
+
+.avatar-name {
+	display:block;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+.list:checked ~ .container {display: block;}
+
+.list:checked ~ .container > .item > .avatar { display: none; }
+
+.list:checked ~ .container > .item > .avatar-name { display: block; margin:0; width: 100%;}
+
+.list:checked ~ .container > .item {
+	display:block; 
+	width: 100%; 
+	height: auto; 
+	padding:0px;
+	margin-top:30px;
+	text-align:left;
+}
