@@ -1,8 +1,9 @@
 var urls = [
-    "http://talez.ru/bulgakov/polotence-s-petukhom.html","http://talez.ru/bulgakov/ya-ubil.html",
-    "http://talez.ru/leskov/iskusny-otvetchik.html","http://talez.ru/leskov/prividenie-v-inzhenernom-zamke.html","http://talez.ru/leskov/tainstvennye-predvestiya.html",
-    "http://talez.ru/pushkin/baryshya-krestianka.html","http://talez.ru/pushkin/stancionny-smotritel.html",
-	"http://talez.ru/bunin/pod-serpom-i-molotom.html",
+    "https://eugenedesign.github.io/talez/bulgakov/polotence-s-petukhom.html","https://eugenedesign.github.io/talez/bulgakov/ya-ubil.html",
+    "https://eugenedesign.github.io/talez/leskov/iskusny-otvetchik.html","https://eugenedesign.github.io/talez/leskov/prividenie-v-inzhenernom-zamke.html","https://eugenedesign.github.io/talez/leskov/tainstvennye-predvestiya.html",
+    "https://eugenedesign.github.io/talez/pushkin/baryshya-krestianka.html","https://eugenedesign.github.io/talez/pushkin/stancionny-smotritel.html",
+	"https://eugenedesign.github.io/talez/bunin/pod-serpom-i-molotom.html",
+	"https://eugenedesign.github.io/talez/chehov/otets.html","https://eugenedesign.github.io/talez/chehov/pari.html","https://eugenedesign.github.io/talez/chehov/skripka-rotshilda.html","https://eugenedesign.github.io/talez/chehov/vanika.html",
 ];
 document.getElementById("random-link").addEventListener("click", function(){
     var url = urls[Math.floor(Math.random()*urls.length)];
